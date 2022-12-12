@@ -5,9 +5,9 @@ from src.insights.jobs import read
 def get_max_salary(path: str) -> int:
     list_infos = read(path)
     salarys = [
-        salary["Max_Salary"]
+        salary["Max_salary"]
         for salary in list_infos
-        if salary["Max_Salary"] != ""
+        if salary["Max_salary"] != ""
     ]
     return max(salarys)
 
