@@ -15,7 +15,7 @@ def get_unique_job_types(path: str) -> List[str]:
     unique_job = set()
     for job in list_infos:
         unique_job.add(job["job_type"])
-    return list(unique_job)
+    return unique_job
 
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
