@@ -20,6 +20,3 @@ def get_unique_job_types(path: str) -> List[str]:
 
 def filter_by_job_type(jobs: List[Dict], job_type: str) -> List[Dict]:
     return [job for job in jobs if job["job_type"] == job_type]
-
-
-# [{'id': 1, 'job_type': 'PART_TIME'}, {'id': 2, 'job_type': 'PART_TIME'}]
