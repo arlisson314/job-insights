@@ -31,14 +31,14 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
         )
         or (int(job["min_salary"]) > int(job["max_salary"]))
     ):
-        raise ValueError("Invalid salaries")
+        raise ValueError("Invalid dict key value")
 
     elif (
         not isinstance(salary, int)
         and not isinstance(salary, str)
         or (isinstance(salary, str) and not salary.isnumeric())
     ):
-        raise ValueError("Invalid salary")
+        raise ValueError("Invalid salary value")
 
     return int(job["min_salary"]) <= int(salary) <= int(job["max_salary"])
 
@@ -46,7 +46,9 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
 def filter_by_salary_range(
     jobs: List[dict], salary: Union[str, int]
 ) -> List[Dict]:
+
     salaries_in_range = []
+
     for job in jobs:
         try:
             if matches_salary_range(job, salary):
