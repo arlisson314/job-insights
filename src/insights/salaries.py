@@ -3,6 +3,7 @@ from src.insights.jobs import read
 
 
 max_s = "max_salary"
+min_s = "min_salary"
 
 
 def get_max_salary(path: str) -> int:
@@ -16,9 +17,7 @@ def get_max_salary(path: str) -> int:
 def get_min_salary(path: str) -> int:
     list_infos = read(path)
     salarys = [
-        int(salary["min_salary"])
-        for salary in list_infos
-        if salary["min_salary"].isdigit()
+        int(salary[min_s]) for salary in list_infos if salary[min_s].isdigit()
     ]
     return min(salarys)
 
