@@ -24,23 +24,20 @@ def get_min_salary(path: str) -> int:
 
 def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
     if (
-        ("min_salary" not in job or "max_salary" not in job)
-        or (
-            not str(job["min_salary"]).isnumeric()
-            or not str(job["max_salary"]).isnumeric()
-        )
-        or (int(job["min_salary"]) > int(job["max_salary"]))
+        (min_s not in job or max_s not in job)
+        or (not str(job[min_s]).isdigit() or not str(job[max_s]).isdigit())
+        or (int(job[min_s]) > int(job[max_s]))
     ):
         raise ValueError("Invalid dict key value")
 
     elif (
         not isinstance(salary, int)
         and not isinstance(salary, str)
-        or (isinstance(salary, str) and not salary.isnumeric())
+        or (isinstance(salary, str) and not salary.isdigit())
     ):
         raise ValueError("Invalid salary value")
 
-    return int(job["min_salary"]) <= int(salary) <= int(job["max_salary"])
+    return int(job[min_s]) <= int(salary) <= int(job[max_s])
 
 
 def filter_by_salary_range(
