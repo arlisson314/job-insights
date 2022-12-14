@@ -2,12 +2,13 @@ from typing import Union, List, Dict
 from src.insights.jobs import read
 
 
+max_s = "max_salary"
+
+
 def get_max_salary(path: str) -> int:
     list_infos = read(path)
     salarys = [
-        int(salary["max_salary"])
-        for salary in list_infos
-        if salary["max_salary"].isdigit()
+        int(salary[max_s]) for salary in list_infos if salary[max_s].isdigit()
     ]
     return max(salarys)
 
