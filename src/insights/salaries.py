@@ -63,11 +63,3 @@ def filter_by_salary_range(
 #     {"max_salary": "1500", "min_salary": "0"},
 #     {"max_salary": "-1", "min_salary": "10"},
 # ]
-
-
-# if min_s not in job or max_s not in job:
-#         raise ValueError("min_salary or max_salary does not exist")
-#     elif not str(job[min_s]).isdigit() or not str(job[max_s]).isdigit():
-#         raise ValueError("min_salary or max_salary are not integer values")
-#     elif int(job[min_s]) > int(job[max_s]):
-#         raise ValueError("min_salary cannot be higher than the max_salary")
