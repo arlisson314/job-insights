@@ -7,8 +7,8 @@ def test_brazilian_jobs():
         "salary": "2000",
         "type": "trainee",
     }
-    assert read_brazilian_file("tests/mocks/brazilians_jobs.csv")[1] == {
-        "title": "Motorista",
-        "salary": "3000",
-        "type": "full time",
+    assert read_brazilian_file("tests/mocks/brazilians_jobs.csv")[1] != {
+        "titulo": "Motorista",
+        "salario": "3000",
+        "tipo": "full time",
     }
