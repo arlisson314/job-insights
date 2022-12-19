@@ -34,7 +34,7 @@ def matches_salary_range(job: Dict, salary: Union[int, str]) -> bool:
         and not isinstance(salary, str)
         or (isinstance(salary, str) and not salary.isdigit())
     ):
-        raise ValueError("Invalid salary value")
+        raise ValueError("salary is not a integer value")
 
     return int(job[min_s]) <= int(salary) <= int(job[max_s])
 
